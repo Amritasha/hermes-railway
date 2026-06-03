@@ -12,4 +12,9 @@ if [ -n "$LLM_MODEL" ]; then
   hermes config set model "$LLM_MODEL" 2>/dev/null || true
 fi
 
+# Start web admin portal in background if port is configured
+if [ -n "$HERMES_WEB_PORT" ]; then
+  hermes portal --port "$HERMES_WEB_PORT" &
+fi
+
 exec hermes gateway

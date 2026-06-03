@@ -7,5 +7,5 @@ startCommand = "sh /start.sh"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
 
-[[services]]
-name = "hermes"
+[[mounts]]
+mountPath = "/root/.hermes"
